@@ -12,6 +12,10 @@ export const Nav = () => {
       <Link style={{ color: '#fff' }} to={'/land'}>
         LAND
       </Link>
+
+      <Link style={{ color: '#fff' }} to={'/portal'}>
+        PORTAL
+      </Link>
     </div>
   );
 };

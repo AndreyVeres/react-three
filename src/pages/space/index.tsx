@@ -71,7 +71,7 @@ export const Space = () => {
     </>
   );
 };
-export function SceneParticles() {
+export default function SceneParticles() {
   return (
     <>
       <object3D position={[1, 8, 10]}>

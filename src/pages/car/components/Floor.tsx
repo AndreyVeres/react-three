@@ -24,11 +24,11 @@ const Floor: FC<GroundProps> = ({ floor }) => {
 
   const [hoveredRib, setHoveredRib] = useState<FloorRib>(null);
 
-  // const handleHover = () => {
-  //   if (isWall) {
-  //   }
-  //   setHover(true);
-  // };
+  const handleHover = () => {
+    if (isWall) {
+    }
+    setHover(true);
+  };
 
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation();
@@ -78,7 +78,7 @@ const Floor: FC<GroundProps> = ({ floor }) => {
       <group>
         <mesh
           ref={meshRef}
-          // onPointerEnter={(e) => handleHover(e)}
+          onPointerEnter={() => handleHover()}
           onPointerLeave={() => setHover(false)}
           onClick={(e) => handleClick(e)}
           position={[pos.x, pos.y, pos.z]}

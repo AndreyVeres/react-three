@@ -1,7 +1,7 @@
 import './UI.css';
 
-import cubeImg from '../../../public/textures/wood.jpg';
-import brick from '../../../public/textures/brick.jpg';
+import cubeImg from '/textures/wood.jpg';
+import brick from '/textures/brick.jpg';
 import { useCubesStore } from '../../store/cubesStore';
 import { useEffect } from 'react';
 export const UserInterface = () => {
@@ -25,7 +25,7 @@ export const UserInterface = () => {
         <span>Move = WASD</span>
         <span>Shift = sprint</span>
       </div>
-      <div className="aim"></div>
+      <div className='aim'></div>
       <div className='UI'>
         <div>
           <button className={selectedTexture === 'wood' ? 'active' : ''} style={{ width: '50px', height: '50px', position: 'relative' }}>

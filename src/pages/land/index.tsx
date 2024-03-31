@@ -10,7 +10,7 @@ export const Land = () => {
   return (
     <Scene>
       <OrbitControls target={[0, 0, 0]} />
-      <Environment background={false} files={'public/textures/envmap.hdr'} />
+      <Environment background={false} files={'/textures/envmap.hdr'} />
       <SphereEnv />
       <PerspectiveCamera makeDefault position={[0, 10, 10]} />
       {/* <Light /> */}

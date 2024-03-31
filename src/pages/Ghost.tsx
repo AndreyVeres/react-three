@@ -15,7 +15,7 @@ export  function GhostPage() {
   return (
     <Canvas shadows onPointerDown={(e:any) => e.target.requestPointerLock()}>
      
-        <Environment files="public/textures/night.hdr" ground={{ scale: 100 }} />
+        <Environment files="/textures/night.hdr" ground={{ scale: 100 }} />
         <directionalLight intensity={0.7} castShadow shadow-bias={-0.0004} position={[-20, 20, 20]}>
           <orthographicCamera attach="shadow-camera" args={[-20, 20, 20, -20]} />
         </directionalLight>
@@ -23,11 +23,11 @@ export  function GhostPage() {
         <Physics timeStep="vary">
           <KeyboardControls map={keyboardMap}>
             <Controller maxVelLimit={5}>
-              <Gltf castShadow receiveShadow scale={0.315} position={[0, -0.55, 0]} src="public/models/ghost_w_tophat-transformed.glb" />
+              <Gltf castShadow receiveShadow scale={0.315} position={[0, -0.55, 0]} src="/models/ghost_w_tophat-transformed.glb" />
             </Controller>
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
-            <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="public/models/fantasy_game_inn2-transformed.glb" />
+            <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/models/fantasy_game_inn2-transformed.glb" />
           </RigidBody>
           
         </Physics>

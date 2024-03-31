@@ -6,8 +6,8 @@ import { Suspense } from 'react';
 export function SceneContainer() {
   return (
     <Suspense fallback={null}>
-      <Environment background={'only'} files={'public/textures/bg.hdr'} />
-      <Environment background={false} files={'public/textures/envmap (1).hdr'} />
+      <Environment background={'only'} files={'/textures/bg.hdr'} />
+      <Environment background={false} files={'/textures/envmap (1).hdr'} />
       <FloatingIsland />
       <Portal />
       <Rocks />
@@ -54,7 +54,7 @@ import { BufferAttribute, Color } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 export function FloatingIsland() {
-  const gltf: any = useLoader(GLTFLoader, 'public/models/floating_island.glb');
+  const gltf: any = useLoader(GLTFLoader, '/models/floating_island.glb');
 
   useEffect(() => {
     if (!gltf) return;
@@ -74,7 +74,7 @@ export function FloatingIsland() {
 }
 
 export function Rocks() {
-  const gltf = useLoader(GLTFLoader, 'public/models/rocks.glb');
+  const gltf = useLoader(GLTFLoader, '/models/rocks.glb');
 
   return <primitive object={gltf.scene} />;
 }
@@ -87,7 +87,7 @@ import { LinearEncoding } from '@react-three/drei/helpers/deprecated';
 const scene = new Scene();
 scene.background = new TextureLoader().load(
   // thanks to https://www.creativeshrimp.com/midjourney-text-to-images.html
-  'public/textures/galaxy.jpg',
+  '/textures/galaxy.jpg',
   (texture: any) => {
     texture.encoding = LinearEncoding;
     texture.mapping = EquirectangularReflectionMapping;
@@ -104,8 +104,8 @@ window.addEventListener('resize', () => {
 
 export function Portal() {
   // thanks to https://sketchfab.com/3d-models/portal-frame-da34b37a224e4e49b307c0b17a50af2c
-  const model = useLoader(GLTFLoader, 'public/models/portal.glb');
-  const mask = useLoader(GLTFLoader, 'public/models/portal_mask.glb');
+  const model = useLoader(GLTFLoader, '/models/portal.glb');
+  const mask = useLoader(GLTFLoader, '/models/portal_mask.glb');
 
   useFrame((state) => {
     state.gl.setRenderTarget(target);
@@ -140,9 +140,9 @@ export function Portal() {
 import { Float } from '@react-three/drei';
 
 export function FloatingRocks() {
-  const rock1 = useLoader(GLTFLoader, 'public/models/floating_rock_1.glb');
-  const rock2 = useLoader(GLTFLoader, 'public/models/floating_rock_2.glb');
-  const rock3 = useLoader(GLTFLoader, 'public/models/floating_rock_3.glb');
+  const rock1 = useLoader(GLTFLoader, '/models/floating_rock_1.glb');
+  const rock2 = useLoader(GLTFLoader, '/models/floating_rock_2.glb');
+  const rock3 = useLoader(GLTFLoader, '/models/floating_rock_3.glb');
 
   return (
     <>

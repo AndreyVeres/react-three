@@ -98,7 +98,7 @@ const y = new THREE.Vector3(0, 1, 0);
 const z = new THREE.Vector3(0, 0, 1);
 
 export function AirPlaneModel(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('public/models/airplane.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/models/airplane.glb') as GLTFResult;
   const groupRef = useRef<any>();
   const helixMeshRef = useRef<any>();
 
@@ -137,4 +137,4 @@ export function AirPlaneModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('public/models/airplane.glb');
+useGLTF.preload('/models/airplane.glb');

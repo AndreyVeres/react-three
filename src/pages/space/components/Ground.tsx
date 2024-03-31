@@ -1,8 +1,8 @@
-import {  RepeatWrapping } from 'three';
+import { RepeatWrapping } from 'three';
 
 import { MeshReflectorMaterial, useTexture } from '@react-three/drei';
 import { RigidBody } from '@react-three/rapier';
-import moonIng from '../../../../public/textures/moon.jpg';
+import moonIng from '/textures/moon.jpg';
 export const Ground = () => {
   const texture = useTexture(moonIng);
 

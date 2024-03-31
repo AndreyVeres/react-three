@@ -55,7 +55,7 @@ interface GLTFAction extends AnimationClip {
 
 export function RobotModel(props: JSX.IntrinsicElements['group']) {
   const group = useRef<Group>(null!);
-  const { nodes, materials, animations } = useGLTF('public/models/robot.glb') as GLTFResult;
+  const { nodes, materials, animations } = useGLTF('/models/robot.glb') as GLTFResult;
   const { actions } = useAnimations<GLTFAction>(animations as any, group);
 
   useEffect(() => {
@@ -206,4 +206,4 @@ export function RobotModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('public/models/robot.glb');
+useGLTF.preload('/models/robot.glb');

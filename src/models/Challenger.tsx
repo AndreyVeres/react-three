@@ -14,7 +14,7 @@ type GLTFResult = GLTF & {
 };
 
 export function ChallengerModel(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('public/models/Challenger.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/models/Challenger.glb') as GLTFResult;
   return (
     <RigidBody>
       <group rotation={[3, 3, 10]} {...props} dispose={null}>
@@ -24,4 +24,4 @@ export function ChallengerModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('public/models/Challenger.glb');
+useGLTF.preload('/models/Challenger.glb');

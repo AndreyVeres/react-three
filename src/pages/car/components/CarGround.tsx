@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { RepeatWrapping, TextureLoader } from 'three';
 
 export const CarGround = () => {
-  const [normal, roughness] = useLoader(TextureLoader, ['public/textures/terrain-normal.jpg', 'public/textures/terrain-roughness.jpg']);
+  const [normal, roughness] = useLoader(TextureLoader, ['/textures/terrain-normal.jpg', '/textures/terrain-roughness.jpg']);
   useEffect(() => {
     [normal, roughness].forEach((t) => {
       t.wrapS = RepeatWrapping;

@@ -24,7 +24,7 @@ type GLTFResult = GLTF & {
 };
 
 export function LandModel(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('public/models/land.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/models/land.glb') as GLTFResult;
 
   const [lightsMaterial, waterMaterial] = useMemo(() => {
     return [
@@ -84,4 +84,4 @@ export function LandModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('public/models/land.glb');
+useGLTF.preload('/models/land.glb');

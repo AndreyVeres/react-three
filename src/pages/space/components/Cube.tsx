@@ -11,7 +11,7 @@ interface CubeProps {
 }
 
 export const Cube: FC<CubeProps> = ({ position, texture, id }) => {
-  const textureMap = useTexture(`public/textures/${texture}.jpg`);
+  const textureMap = useTexture(`/textures/${texture}.jpg`);
   const { removeCube } = useCubesStore((state) => state);
   const [hover, setHover] = useState(false);
   const [_, setIsDrag] = useState(false);

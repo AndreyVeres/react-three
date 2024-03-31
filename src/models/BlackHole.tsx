@@ -39,7 +39,7 @@ type GLTFResult = GLTF & {
 
 export function BlackHoleModel(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF('public/models/blackhole.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/models/blackhole.glb') as GLTFResult;
   // const { actions } = useAnimations<GLTFAction>(animations as any, group);
 
   return (
@@ -230,4 +230,4 @@ export function BlackHoleModel(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('public/models/blackhole.glb');
+useGLTF.preload('/models/blackhole.glb');

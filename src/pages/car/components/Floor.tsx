@@ -1,6 +1,6 @@
 import { DoubleSide, Mesh } from 'three';
 import { useBuildStore } from '../../../store/buildStore';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC,  useRef, useState } from 'react';
 import { ThreeEvent } from '@react-three/fiber';
 import { IFloor } from '../../../store/buildStore';
 
@@ -24,11 +24,11 @@ const Floor: FC<GroundProps> = ({ floor }) => {
 
   const [hoveredRib, setHoveredRib] = useState<FloorRib>(null);
 
-  const handleHover = (e: ThreeEvent<PointerEvent>) => {
-    if (isWall) {
-    }
-    setHover(true);
-  };
+  // const handleHover = () => {
+  //   if (isWall) {
+  //   }
+  //   setHover(true);
+  // };
 
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
     e.stopPropagation();
@@ -71,14 +71,14 @@ const Floor: FC<GroundProps> = ({ floor }) => {
     setHoveredRib(rib);
   };
 
-  const handleRibClick = (e: any) => console.log(e);
+  // const handleRibClick = (e: any) => console.log(e);
 
   return (
     <RigidBody>
       <group>
         <mesh
           ref={meshRef}
-          onPointerEnter={(e) => handleHover(e)}
+          // onPointerEnter={(e) => handleHover(e)}
           onPointerLeave={() => setHover(false)}
           onClick={(e) => handleClick(e)}
           position={[pos.x, pos.y, pos.z]}
@@ -92,20 +92,20 @@ const Floor: FC<GroundProps> = ({ floor }) => {
         {hover && (
           <group>
             {/* Верхнее ребро */}
-            <mesh onPointerEnter={(e) => handleRibHover('front')} position={[pos.x, pos.y, pos.z - 0.5]} receiveShadow={false}>
+            <mesh onPointerEnter={() => handleRibHover('front')} position={[pos.x, pos.y, pos.z - 0.5]} receiveShadow={false}>
               <planeGeometry args={[1, 0.01]} />
               <meshBasicMaterial color={hover ? 'red' : 'transparent'} side={DoubleSide} transparent={true} />
             </mesh>
 
             {/* Нижнее ребро */}
-            <mesh onPointerEnter={(e) => handleRibHover('back')} position={[pos.x, pos.y, pos.z + 0.5]} receiveShadow={false}>
+            <mesh onPointerEnter={() => handleRibHover('back')} position={[pos.x, pos.y, pos.z + 0.5]} receiveShadow={false}>
               <planeGeometry args={[1, 0.01]} />
               <meshBasicMaterial color={hover ? 'red' : 'transparent'} side={DoubleSide} transparent={true} />
             </mesh>
 
             {/* Левое ребро */}
             <mesh
-              onPointerEnter={(e) => handleRibHover('left')}
+              onPointerEnter={() => handleRibHover('left')}
               rotation-x={-Math.PI * 0.5}
               position={[pos.x - 0.5, pos.y, pos.z]}
               receiveShadow={false}
@@ -116,7 +116,7 @@ const Floor: FC<GroundProps> = ({ floor }) => {
 
             {/* Правое ребро */}
             <mesh
-              onPointerEnter={(e) => handleRibHover('right')}
+              onPointerEnter={() => handleRibHover('right')}
               rotation-x={-Math.PI * 0.5}
               position={[pos.x + 0.5, pos.y, pos.z]}
               receiveShadow={false}

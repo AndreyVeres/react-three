@@ -6,7 +6,6 @@ import { FirstPerson } from './components/FirstPerson';
 import { Light } from '../../components/Light';
 import { RobotModel } from '../../models/Robot';
 
-import { useCubesStore } from '../../store/cubesStore';
 
 import { UserInterface } from '../../components/UI/UserInterface';
 

@@ -16,15 +16,15 @@ export const FirstPerson = () => {
   const [sub, get] = useKeyboardControls();
   const bodyRef = useRef<any>();
   const [moveSpeed, setMoveSpeed] = useState(MOVE_SPEED);
-  const { addCube, removeCube, cubes, selectedTexture } = useCubesStore((state) => state);
+  const { addCube,  selectedTexture } = useCubesStore((state) => state);
   const { camera } = useThree();
 
-  const isLookingAtCube = (cubePosition: Vector3, cameraPosition: Vector3, cameraDirection: Vector3): boolean => {
-    const directionToCube = new Vector3().copy(cubePosition).sub(cameraPosition).normalize();
+  // const isLookingAtCube = (cubePosition: Vector3, cameraPosition: Vector3, cameraDirection: Vector3): boolean => {
+  //   const directionToCube = new Vector3().copy(cubePosition).sub(cameraPosition).normalize();
 
-    // Если куб находится впереди камеры (по направлению взгляда) и на расстоянии менее пороговой дистанции, то считаем, что вы смотрите на куб
-    return cubePosition.distanceTo(cameraPosition) < INTERACT_CUBE_DISTANCE && directionToCube.dot(cameraDirection) > 0.9; // dot product близок к 1, если вектора близки по направлению
-  };
+  //   // Если куб находится впереди камеры (по направлению взгляда) и на расстоянии менее пороговой дистанции, то считаем, что вы смотрите на куб
+  //   return cubePosition.distanceTo(cameraPosition) < INTERACT_CUBE_DISTANCE && directionToCube.dot(cameraDirection) > 0.9; // dot product близок к 1, если вектора близки по направлению
+  // };
 
   const getCubeSpawnPos = () => {
     const cameraPosition = new Vector3();
@@ -59,7 +59,7 @@ export const FirstPerson = () => {
 
   useFrame(() => {
     if (!bodyRef.current) return;
-    const { forward, backward, left, right, jump, moveSpeed: move, drag, remove } = get();
+    const { forward, backward, left, right, jump, moveSpeed: move } = get();
 
     if (move) {
       setMoveSpeed(MOVE_SPEED * 2.5);

@@ -1,6 +1,6 @@
 import { useTexture } from '@react-three/drei';
-import { CollisionEnterPayload, RigidBody } from '@react-three/rapier';
-import { FC, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { RigidBody } from '@react-three/rapier';
+import { FC, useRef, useState } from 'react';
 import { useCubesStore } from '../../../store/cubesStore';
 import { ThreeEvent } from '@react-three/fiber';
 
@@ -12,9 +12,9 @@ interface CubeProps {
 
 export const Cube: FC<CubeProps> = ({ position, texture, id }) => {
   const textureMap = useTexture(`public/textures/${texture}.jpg`);
-  const { removeCube, updateCubePosition } = useCubesStore((state) => state);
+  const { removeCube } = useCubesStore((state) => state);
   const [hover, setHover] = useState(false);
-  const [isDrag, setIsDrag] = useState(false);
+  const [_, setIsDrag] = useState(false);
 
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
     if (e.ctrlKey) {

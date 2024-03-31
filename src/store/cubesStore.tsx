@@ -19,7 +19,7 @@ export interface ICameraStore {
 export const useCubesStore = create<ICameraStore>()((set) => ({
   cubes: [],
   selectedTexture: 'wood',
-  setSelectedTexture: (texture: 'wood' | 'brick') => set((state) => ({ selectedTexture: texture })),
+  setSelectedTexture: (texture: 'wood' | 'brick') => set(() => ({ selectedTexture: texture })),
   addCube: (cube) => set((state) => ({ cubes: [...state.cubes, cube] })),
   removeCube: (id) => set((state) => ({ cubes: state.cubes.filter((cube) => cube.id !== id) })),
 

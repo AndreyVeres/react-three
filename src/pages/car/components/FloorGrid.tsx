@@ -1,4 +1,4 @@
-import { ThreeEvent } from '@react-three/fiber';
+
 import { FC, useState } from 'react';
 import { DoubleSide } from 'three';
 import { useBuildStore } from '../../../store/buildStore';
@@ -42,7 +42,7 @@ const GridItem: FC<GridItemProps> = ({ pos }) => {
 
   return (
     <mesh
-      onPointerEnter={(e) => setHover(true)}
+      onPointerEnter={() => setHover(true)}
       onPointerLeave={() => setHover(false)}
       onClick={handleClick}
       position={[pos.x, pos.y, pos.z]}

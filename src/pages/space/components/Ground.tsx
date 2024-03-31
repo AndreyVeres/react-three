@@ -1,5 +1,5 @@
-import { DoubleSide, RepeatWrapping } from 'three';
-import grounImg2 from '../../../../public/ground2.jpg';
+import {  RepeatWrapping } from 'three';
+
 import { MeshReflectorMaterial, useTexture } from '@react-three/drei';
 import { RigidBody } from '@react-three/rapier';
 import moonIng from '../../../../public/textures/moon.jpg';

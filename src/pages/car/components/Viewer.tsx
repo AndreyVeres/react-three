@@ -1,15 +1,15 @@
-import { PerspectiveCamera, PointerLockControls, useKeyboardControls } from '@react-three/drei';
+import { PointerLockControls } from '@react-three/drei';
 import { CapsuleCollider, RigidBody } from '@react-three/rapier';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useInput } from '../../../hooks/useControls';
 import { useFrame } from '@react-three/fiber';
 import { Vector3 } from 'three';
-const MOVE_SPEED = 5;
-const JUMP_FORCE = 10;
+// const MOVE_SPEED = 5;
+// const JUMP_FORCE = 10;
 const direction = new Vector3();
 const frontVector = new Vector3();
 const sideVector = new Vector3();
-const INTERACT_CUBE_DISTANCE = 2;
+// const INTERACT_CUBE_DISTANCE = 2;
 
 export const Viewer = () => {
   const { forward, backward, left, right } = useInput();

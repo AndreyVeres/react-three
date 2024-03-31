@@ -26,7 +26,7 @@ type GLTFResult = GLTF & {
 export function LandModel(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('public/models/land.glb') as GLTFResult;
 
-  const [lightsMaterial, waterMaterial, myMaterial] = useMemo(() => {
+  const [lightsMaterial, waterMaterial] = useMemo(() => {
     return [
       new THREE.MeshStandardMaterial({
         envMapIntensity: 0,

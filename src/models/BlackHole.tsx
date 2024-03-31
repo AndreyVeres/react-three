@@ -1,9 +1,8 @@
 import * as THREE from 'three';
-import { useEffect, useRef } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useRef } from 'react';
+import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
-import { RigidBody, useRapier } from '@react-three/rapier';
-
+import { RigidBody } from '@react-three/rapier';
 type GLTFResult = GLTF & {
   nodes: {
     Blackhole_core_Blackhole_core_0: THREE.Mesh;
@@ -33,18 +32,18 @@ type GLTFResult = GLTF & {
   };
 };
 
-type ActionName = 'Take 001';
-interface GLTFAction extends THREE.AnimationClip {
-  name: ActionName;
-}
+// type ActionName = 'Take 001';
+// interface GLTFAction extends THREE.AnimationClip {
+//   name: ActionName;
+// }
 
 export function BlackHoleModel(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials, animations } = useGLTF('public/models/blackhole.glb') as GLTFResult;
-  const { actions } = useAnimations<GLTFAction>(animations as any, group);
+  const { nodes, materials } = useGLTF('public/models/blackhole.glb') as GLTFResult;
+  // const { actions } = useAnimations<GLTFAction>(animations as any, group);
 
   return (
-    <RigidBody type='kinematicPosition' >
+    <RigidBody type='kinematicPosition'>
       <group ref={group} {...props} dispose={null}>
         <group name='Sketchfab_Scene'>
           <group name='Sketchfab_model' rotation={[-Math.PI / 2, 0, 0]} scale={0.016}>

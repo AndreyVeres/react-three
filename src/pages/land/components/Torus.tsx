@@ -40,7 +40,7 @@ export function Torus() {
   }, [targets]);
 
   useFrame(() => {
-    targets.forEach((target, i) => {
+    targets.forEach((target) => {
       const v = planePosition.clone().sub(target.center);
       const dist = target.direction.dot(v);
       const projected = planePosition.clone().sub(target.direction.clone().multiplyScalar(dist));
@@ -58,7 +58,7 @@ export function Torus() {
   });
   return (
     <>
-      {targets.map((target, i) => (
+      {targets.map((_, i) => (
         <mesh key={i} geometry={geometry}>
           {/* <torusGeometry args={[TARGET_RAD, 0.02, 8, 25]} /> */}
           <meshStandardMaterial roughness={0.5} metalness={0.5} />

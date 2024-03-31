@@ -1,0 +1,11 @@
+.build-ui {
+  background: rgba(0, 0, 0, 0.541);
+  bottom: 0;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  color: #fff;
+}

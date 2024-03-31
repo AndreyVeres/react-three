@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
-import { Gltf, Environment, Fisheye, KeyboardControls } from '@react-three/drei'
+import { Gltf, Environment,  KeyboardControls } from '@react-three/drei'
 import Controller from 'ecctrl'
 
 export  function GhostPage() {

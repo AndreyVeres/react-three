@@ -1,6 +1,6 @@
-import { Environment, OrbitControls } from '@react-three/drei';
+import {  OrbitControls } from '@react-three/drei';
 import { Scene } from '../../components/Scene';
-import { Ground } from '../space/components/Ground';
+
 import { CarGround } from '../car/components/CarGround';
 
 export const MedievalPage = () => {

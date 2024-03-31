@@ -1,5 +1,5 @@
 import { useLoader } from '@react-three/fiber';
-import React from 'react';
+
 import { MMDLoader } from 'three/examples/jsm/Addons.js';
 
 export const AnimeModel = () => {
